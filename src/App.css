@@ -1,38 +1,205 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+  background-color: #0B3D91; /* NASA blue */
+  color: #FFFFFF;
+  line-height: 1.6;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+  background-image: url('https://www.nasa.gov/sites/default/files/thumbnails/image/stsci-h-p2001a-m-2000x1374.png');
+  background-size: cover;
+  background-position: center;
+  color: #FFFFFF;
+  line-height: 1.6;
+}
+
 .App {
   text-align: center;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Container for APOD Content */
+.apod-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Title Styles */
+h1 {
+  font-size: 2.5rem;
+  color: #FFD700; /* Gold */
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+  margin-bottom: 20px;
+}
+/* App Header */
+h1 {
+  font-size: 3rem;
+  color: #FFD700; /* Gold */
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+  margin-bottom: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h2 {
+  font-size: 2rem;
+  color: #FFD700; /* Gold */
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+  margin-bottom: 15px;
+}
+
+/* Image Styles */
+img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  margin: 20px 0;
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.02);
+}
+
+/* Explanation Text */
+p {
+  font-size: 1.1rem;
+  color: #FFFFFF;
+  margin: 10px 0;
+}
+
+/* Date Text */
+p.date {
+  font-size: 0.9rem;
+  color: #CCCCCC;
+  font-style: italic;
+}
+
+/* Loading Spinner */
+.loading {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.5rem;
+  color: #FFD700;
 }
 
-.App-link {
-  color: #61dafb;
+/* Add a subtle animation for the loading text */
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.loading span {
+  animation: pulse 1.5s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  h2 {
+    font-size: 1.5rem;
   }
+
+  .apod-container {
+    padding: 15px;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+.error {
+  text-align: center;
+  color: #FF6B6B; /* Red color for errors */
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.5rem;
+  color: #FFD700; /* Gold */
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+.loading span {
+  animation: pulse 1.5s infinite;
+}
+/* Rocket Launcher Styles */
+.rocket-launcher {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.rocket {
+  font-size: 3rem;
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+}
+
+.rocket.launch {
+  animation: launchRocket 2s linear forwards;
+}
+
+@keyframes launchRocket {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-100px) rotate(-10deg);
+  }
+  100% {
+    transform: translateY(-1000px) rotate(-30deg);
+  }
+}
+
+.launch-button {
+  background-color: #FFD700; /* Gold */
+  color: #0B3D91; /* NASA Blue */
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.launch-button:hover {
+  background-color: #FFA500; /* Orange */
 }
